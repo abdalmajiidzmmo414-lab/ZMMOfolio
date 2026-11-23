@@ -119,6 +119,7 @@ html { scroll-behavior: smooth; }
 .contact-t { text-align: center; text-transform: uppercase; margin: 0; color: #ffffff; }
 
 .c-box { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; width: 100%; }
+
 .whatsapp, .e-mail {
     display: flex; align-items: center; gap: 15px;
     background-color: #1c2636; padding: 15px 25px; border-radius: 15px;
@@ -202,12 +203,12 @@ html { scroll-behavior: smooth; }
     .e-accomplishments, .e-Skills { 
         grid-template-columns: repeat(2, 1fr); 
         gap: 20px; 
-        max-width: 450px;
-    }
+        max-width: 450px;}
     .address p { font-size: 28px; }
     .main-header { padding: 15px 20px; flex-direction: column; gap: 10px; }
     .main-header .nav-links a { margin: 0 10px; font-size: 14px; }
     #Accomplishments, #Skills, #contact { scroll-margin-top: 140px; }
+    #box-contact p {font-size: 15px;}
 }
 
 /* كرات الخلفية الصاعدة */

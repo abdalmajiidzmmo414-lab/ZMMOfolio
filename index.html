@@ -1,69 +1,212 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zmmofolio | Abdalmajiid Zmmo - Portfolio</title>
-    <meta name="description" content="الموقع الشخصي وأعمال المطور عبد المجيد زمو - Abdalmajiid Zmmo Portfolio (Zmmofolio)">
-    <meta name="keywords" content="zmmofolio, Abdalmajiid Zmmo, عبد المجيد زمو, portfolio, web developer">
-    <link rel="stylesheet" href="style.css">
-</head>
+body { 
+    background: linear-gradient(-60deg, #040035, #000000);
+    min-height: 100vh;
+    margin: 0;  
+    padding: 0 20px 60px 20px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+html { scroll-behavior: smooth; }
+
+/* الشريط العلوي */
+.main-header {
+    position: fixed; top: 0; left: 0; width: 100%;
+    background-color: rgba(19, 26, 38, 0.95);
+    border-bottom: 2px solid #8b5cf6; 
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15); 
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 25px 30px; z-index: 1000; box-sizing: border-box;
+}
+
+.main-header .logo {
+    color: #ffffff; font-size: 22px; font-weight: bold; letter-spacing: 2px;
+    text-shadow: 0 0 10px #8b5cf6;
+}
+
+.main-header .nav-links { display: flex; align-items: center; }
+.nav-links a {
+    color: #b4b4b4; text-decoration: none; font-size: 16px; margin-left: 25px; font-weight: 500;
+}
+.main-header img{ object-fit: cover; height: 30px; aspect-ratio: 1/1;transition: 0.2s;}
+.main-header .nav-links a:hover { color: #8b5cf6; text-shadow: 0 0 8px #8b5cf6; }
+/* 1. قسم التعريف */
+#me { 
+    width: 100%;
+    max-width: 1150px;
+    min-height: 100vh;
+    padding-top: 80px;
+    display: grid; 
+    grid-template-columns: 1fr auto; 
+    align-items: center; 
+    gap: 40px; 
+}
+
+.Abdalmajiid {
+    font-size: 60px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #0089b3, #5e29ff, #270083);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-me { display: flex; flex-direction: column; align-items: flex-start; gap: 25px; }
+
+.about-me p { 
+    font-size: 18px; font-family: 'Courier New', Courier, monospace; 
+    color: #b4b4b4; padding: 8px 12px; 
+    border-left: 5px solid #8b5cf6; 
+}
+
+.about-me a {
+    transition: 0.4s; background-color: #8b5cf6; border-radius: 25px; 
+    padding: 12px 28px; text-align: center; font-weight: bold;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4); color: #ffffff; text-decoration: none;
+}
+
+.about-me a:hover { 
+    transform: scale(1.03); background-color: #a78bfa; color: #0d121d; 
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.img { display: flex; justify-content: center; align-items: center; }
+.img img {
+    transition: 0.6s; 
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.5); 
+    border-radius: 50%; 
+    object-fit: cover; 
+    width: 240px; 
+    height: 240px;
+    animation: spaceFloat 6s ease-in-out infinite;
+}
+.img img:hover { 
+    animation-play-state: paused;
+    transform: scale(1.07) rotate(3deg); 
+}
+
+@keyframes spaceFloat {
+    0% {
+        transform: translateY(0px) rotate(-2deg);
+        box-shadow: 0 3px 10px rgba(139, 92, 246, 0.4);
+    }
+    50% {
+        transform: translateY(-30px) rotate(5deg);
+        box-shadow: 1px 4px 15px rgba(0, 137, 179, 0.5);
+    }
+    100% {
+        transform: translateY(0px) rotate(-2deg);
+        box-shadow: 0 3px 7px rgba(139, 92, 246, 0.4);
+    }
+}
+
+.all { width: 100%; max-width: 1150px; display: flex; flex-direction: column; gap: 80px; }
+
+/* 2. قسم التواصل */
+.box-i { 
+    border: 3px solid #8b5cf6; 
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2), inset 0 0 20px rgba(139, 92, 246, 0.1); 
+    border-radius: 25px; background-color: #131a26; padding: 35px; 
+}
+
+#contact { 
+    display: flex; flex-direction: column; align-items: center; gap: 25px; 
+    color: #b4b4b4; font-size: 24px; font-weight: bold; letter-spacing: 2px; 
+    text-shadow: 0 0 10px #8b5cf6;
+}
+
+.contact-t { text-align: center; text-transform: uppercase; margin: 0; color: #ffffff; }
+
+.c-box { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; width: 100%; }
+
+.whatsapp, .e-mail {
+    display: flex; align-items: center; gap: 15px;
+    background-color: #1c2636; padding: 15px 25px; border-radius: 15px;
+    border: 1px solid rgba(139, 92, 246, 0.3); transition: 0.3s;
+}
+.whatsapp:hover, .e-mail:hover { border-color: #8b5cf6; transform: translateY(-3px); }
+.c-box img { height: 28px; width: 28px; border-radius: 5px; object-fit: cover; }
+.c-box a { text-decoration: none; color: #a78bfa; font-size: 16px; font-family: serif; }
+.c-box a p { margin: 0; }
+
+/* عناوين المشاريع والمهارات */
+.address p { 
+    text-shadow: 0 0 15px #8b5cf6; font-size: 36px; color: #ffffff; 
+    margin: 0 0 35px 0; text-align: center; font-weight: bold; 
+}
+
+/* المشاريع والمهارات (بحجم أصغر ومتناسق) */
+.e-accomplishments, .e-Skills { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px; 
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
 
 
-<body>
+.The-Accomplishments p, .The-Skills p{
+    font-family: 'Orbitron', sans-serif;
+}
 
-    <header class="main-header">
-        <div class="logo">ZMMO</div>
-        <nav class="nav-links">
-            <a href="#me">About Me</a>
-            <a href="#contact">Contact</a>
-            <a href="#Accomplishments">Accomplishments</a>
-            <a href="#Skills">Skills</a>
-            <a href="#me" ><img src="img/home-icon.png" alt=""></a>
-        </nav>
-    </header>
+.The-Accomplishments, .The-Skills {
+    transition: 0.4s; 
+    background-color: #1c2636; 
+    border-radius: 16px; 
+    padding: 0;
+    overflow: hidden;
+    color: #ffffff; 
+    text-align: center;
+    box-shadow: 0 0 20px rgba(132, 97, 212, 0.089);
+}
 
-    <div id="me">
-       <div class="txt">
-           <div class="name"> <p class="Abdalmajiid">Abdalmajiid Zmmo </p></div>
-           <div class="about-me"><p>A Passionate Code Enthusiast</p> <a href="#Accomplishments">Accomplishments &crarr;</a></div>
-       </div>
-       <div class="img"><img src="img/me.jpg" alt=""></div>
-    </div>
+.The-Accomplishments:hover, .The-Skills:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 0 25px rgba(138, 92, 246, 0.178);
+}
 
-    <div class="all"> 
-        
-        <div class="box-i" id="contact">
-            <p class="contact-t">contact</p>
-            <div class="c-box" id="box-contact">
-                <div class="whatsapp">
-                    <img src="img/whatsapp.png" alt="">
-                    <a href="https://wa.me"><p>+939658492</p></a>
-                </div>
-                <div class="e-mail">
-                    <img src="img/Gmail.png" alt="">
-                    <a href="mailto:abdalmajiidzmmo414@gmail.com"><p>abdalmajiidzmmo414@gmail.com</p></a>
-                </div>
-            </div> 
-        </div> 
+.The-Accomplishments img, .The-Skills img { 
+    width: 100%; 
+    aspect-ratio: 4 / 3; 
+    object-fit: cover; 
+    display: block;
+    margin: 0;
+}
 
-        <div id="Accomplishments">
-           <div class="address"><p>Accomplishments</p></div>
-           <div class="e-accomplishments"> 
-               <div class="The-Accomplishments"><img src="img/midale.jpg" alt=""><p>Bronze Medal – Running Marathon</p></div>
-               <div class="The-Accomplishments"><img src="img/books.jpg" alt=""><p>Completed 40+ books</p></div>
-           </div>
-        </div>
+.The-Accomplishments p, .The-Skills p { 
+    margin: 0; 
+    padding: 10px; 
+    font-size: 16px; 
+    font-weight: 500; 
+    color: #ffffff;
+}
 
-        <div id="Skills">
-            <div class="address"><p>Skills</p></div>
-            <div class="e-Skills"> 
-                <div class="The-Skills"><img src="img/html.jpg" alt=""><p>HTML</p></div>
-                <div class="The-Skills"><img src="img/css.jpg" alt=""><p>CSS</p></div>
-                <div class="The-Skills"><img src="img/ar.jpg" alt=""><p>Arabic (Native)</p></div>
-                <div class="The-Skills"><img src="img/en.jpg" alt=""><p>English</p></div>
-            </div>
-        </div>
+#me, #Accomplishments, #Skills, #contact { scroll-margin-top: 120px; }
 
-    </div>
-</body>
-</html>
+/* التجاوب في المتوسطة */
+@media (max-width: 945px) {
+    .e-accomplishments, .e-Skills { 
+        grid-template-columns: repeat(3, 1fr); 
+        max-width: 700px;
+    }
+}
+
+/* التجاوب في الهاتف */
+@media (max-width: 700px) {
+    #me { grid-template-columns: 1fr; text-align: center; gap: 20px; padding-top: 140px; }
+    .Abdalmajiid { text-align: center; font-size: 30px;}
+    .about-me { align-items: center; gap: 5px;}
+    .img { grid-row: 1; }
+    .img img { width: 150px; height: 150px; }
+    .e-accomplishments, .e-Skills { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px; 
+        max-width: 450px;}
+    .address p { font-size: 25px; }
+    .main-header { padding: 15px 15px; flex-direction: column; gap: 10px; }
+    .main-header .nav-links a { margin: 0 10px; font-size: 14px; }
+    #Accomplishments, #Skills, #contact { scroll-margin-top: 50px; }
+    .e-mail p{font-size: 7px;}
+}
